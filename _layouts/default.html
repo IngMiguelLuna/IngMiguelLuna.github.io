@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Ing. Mike Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      /* Contenido de assets/css/main.css */
+      body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+      .w3-row-padding img {margin-bottom: 12px}
+      /* Establecer el ancho de la barra lateral a 120px */
+      .w3-sidebar {width: 120px; background: #222;}
+      /* Añadir un margen izquierdo al "contenido de la página" que coincida con el ancho de la barra lateral (120px) */
+      #main {margin-left: 120px}
+      /* Eliminar márgenes del "contenido de la página" en pantallas pequeñas */
+      @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+      .skill-bar {
+        position: relative;
+        height: 28px;
+        background-color: #ddd;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .skill-bar div {
+        height: 100%;
+        width: 0;
+        background-color: #93bbb2;
+        transition: width 0.5s ease-in-out;
+      }
+      .skill-bar:hover div {
+        width: var(--skill-level);
+      }
+      .w3-card-4 img {
+        width: 100%;
+        height: auto;
+      }
+      .w3-card-4:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 8px rgba(59, 175, 218, 0.3);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .w3-card-4 {
+        perspective: 1000px;
+      }
+      .w3-card-4:hover .w3-container {
+        transform: rotateY(10deg);
+      }
+      form p {
+        margin-bottom: 16px;
+      }
+      form textarea {
+        resize: vertical;
+      }
+      .w3-button.w3-light-grey.w3-hover-black {
+        background-color: #64FFDA;
+        color: #000;
+        border: none;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .w3-button.w3-light-grey.w3-hover-black:hover {
+        background-color: #000;
+        color: #64FFDA;
+      }
+    </style>
+  </head>
+<body class="w3-black">
+
+<!-- Barra de iconos (barra lateral - oculta en pantallas pequeñas) -->
+<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+  <!-- Imagen de avatar en la esquina superior izquierda -->
+  <img src="https://www.w3schools.com/w3images/avatar_smoke.jpg" style="width:100%">
+  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+    <i class="fa fa-home w3-xxlarge"></i>
+    <p>INICIO</p>
+  </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-user w3-xxlarge"></i>
+    <p>SOBRE MÍ</p>
+  </a>
+  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-eye w3-xxlarge"></i>
+    <p>PROYECTOS</p>
+  </a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>CONTACTO</p>
+  </a>
+</nav>
+
+<!-- Barra de navegación en pantallas pequeñas (oculta en pantallas medianas y grandes) -->
+<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">INICIO</a>
+    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">SOBRE MÍ</a>
+    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PROYECTOS</a>
+    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACTO</a>
+  </div>
+</div>
+
+<!-- Contenido de la página -->
+<div class="w3-padding-large" id="main">
+  <!-- Encabezado/Inicio -->
+  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+    <h1 class="w3-jumbo"><span class="w3-hide-small">{{page.prefijo}}</span> {{page.nombre}}</h1>
+    <p>{{page.descripcion}}</p>
+    <img src="https://www.w3schools.com/w3images/man_smoke.jpg" alt="Miguel Ángel Luna" class="w3-image" width="992" height="1108">
+  </header>
+
+  <!-- Sección Sobre Mí -->
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+    <h2 class="w3-text-light-grey">Sobre Mí</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>{{page.acercaDe}}</p>
+    <h3 class="w3-padding-16 w3-text-light-grey">Mis Habilidades</h3>
+    <p class="w3-wide">{{page.skill1}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc1}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill2}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc2}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill3}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc3}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill4}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc4}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill5}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc5}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill6}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc6}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill7}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc7}};">
+      <div></div>
+    </div>
+    <p class="w3-wide">{{page.skill8}}</p>
+    <div class="skill-bar" style="--skill-level: {{page.prc8}};">
+      <div></div>
+    </div>
+  <!-- Fin de la sección Sobre Mí -->
+  </div>
+  
+  <!-- Sección de Portafolio -->
+  <div class="w3-padding-64 w3-content" id="photos">
+    <h2 class="w3-text-light-grey">Mis Proyectos</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <!-- Cuadrícula para tarjetas de proyectos -->
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-half">
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="https://www.w3schools.com/w3images/wedding.jpg" alt="Proyecto 1">
+          <div class="w3-container">
+            <h3>Proyecto 1</h3>
+            <p>Descripción breve del proyecto 1.</p>
+          </div>
+        </div>
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="https://www.w3schools.com/w3images/rocks.jpg" alt="Proyecto 2">
+          <div class="w3-container">
+            <h3>Proyecto 2</h3>
+            <p>Descripción breve del proyecto 2.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="w3-half">
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="https://www.w3schools.com/w3images/sailboat.jpg" alt="Proyecto 3">
+          <div class="w3-container">
+            <h3>Proyecto 3</h3>
+            <p>Descripción breve del proyecto 3.</p>
+          </div>
+        </div>
+        <div class="w3-card-4 w3-margin w3-white">
+          <img src="https://www.w3schools.com/w3images/underwater.jpg" alt="Proyecto 4">
+          <div class="w3-container">
+            <h3>Proyecto 4</h3>
+            <p>Descripción breve del proyecto 4.</p>
+          </div>
+        </div>
+      </div>
+    <!-- Fin de la cuadrícula de proyectos -->
+    </div>
+  <!-- Fin de la sección de Portafolio -->
+  </div>
+
+  <!-- Sección de Contacto -->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+    <h2 class="w3-text-light-grey">Contáctame</h2>
+    <hr style="width:200px" class="w3-opacity">
+
+    <div class="w3-section">
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Ciudad de México, MX</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Teléfono: +52 55 1234 5678</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ing.miguel.luna.l@gmail.com</p>
+    </div><br>
+    <p>Envíame un mensaje:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Asunto" required name="Subject"></p>
+      <p><textarea class="w3-input w3-padding-16 w3-border" placeholder="Mensaje" required name="Message"></textarea></p>
+      <p>
+        <button class="w3-button w3-light-grey w3-padding-large w3-hover-black" type="submit">
+          <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
+        </button>
+      </p>
+    </form>
+  <!-- Fin de la sección de Contacto -->
+  </div>
+  
+<!-- Pie de página -->
+<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+<!-- Fin del pie de página -->
+</footer>
+
+<!-- FIN DEL CONTENIDO DE LA PÁGINA -->
+</div>
+
+</body>
+</html>

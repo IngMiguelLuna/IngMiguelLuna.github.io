@@ -1,0 +1,55 @@
+body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+.w3-row-padding img {margin-bottom: 12px}
+/* Establecer el ancho de la barra lateral a 120px */
+.w3-sidebar {width: 120px;background: #222;}
+/* Añadir un margen izquierdo al "contenido de la página" que coincida con el ancho de la barra lateral (120px) */
+#main {margin-left: 120px}
+/* Eliminar márgenes del "contenido de la página" en pantallas pequeñas */
+@media only screen and (max-width: 600px) {#main {margin-left: 0}}
+.skill-bar {
+    position: relative;
+    height: 28px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.skill-bar div {
+    height: 100%;
+    width: 0;
+    background-color: #93bbb2;
+    transition: width 0.5s ease-in-out;
+}
+.skill-bar:hover div {
+    width: var(--skill-level);
+}
+.w3-card-4 img {
+    width: 100%;
+    height: auto;
+}
+.w3-card-4:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(59, 175, 218, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.w3-card-4 {
+    perspective: 1000px;
+}
+.w3-card-4:hover .w3-container {
+    transform: rotateY(10deg);
+}
+form p {
+    margin-bottom: 16px;
+}
+form textarea {
+    resize: vertical;
+}
+.w3-button.w3-light-grey.w3-hover-black {
+    background-color: #64FFDA;
+    color: #000;
+    border: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+.w3-button.w3-light-grey.w3-hover-black:hover {
+    background-color: #000;
+    color: #64FFDA;
+}
