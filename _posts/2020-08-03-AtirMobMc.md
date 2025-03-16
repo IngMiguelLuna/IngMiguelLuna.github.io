@@ -1,4 +1,6 @@
 ---
+layout: post
+autor: MikeLuna
 titulo: "AtirMob"
 descripcion: "Modelo 3D hecho en blockbench"
 img: "_assets/Atir.png"
