@@ -1,8 +1,8 @@
 ---
 titulo: "AtirMob"
 descripcion: "Modelo 3D hecho en blockbench"
-img: "assets/Atir.png"
-img2: "assets/BlockBenchAtirModel.png"
+img: "_assets/Atir.png"
+img2: "_assets/BlockBenchAtirModel.png"
 ---
 
 # Bienvenido
