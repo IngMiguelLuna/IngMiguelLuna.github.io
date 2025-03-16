@@ -21,10 +21,10 @@
 title: "Miguel Ángel Luna Blog"
 email: "ing.miguel.luna.l@gmail.com"
 description: "Blog sobre mecatrónica, desarrollo de software y más."
-baseurl: "/me" # the subpath of your site, e.g. /blog
-url: "http://ing-mike-luna.com" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "index.html" # the subpath of your site, e.g. /blog
+url: "https://ingmiguelluna.github.io./" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Ing_MikeLuna
-github_username:  tuperfil
+github_username:  IngMiguelLuna
 
 # Build settings
 theme: minima

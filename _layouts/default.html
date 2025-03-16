@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <title>Ing. Mike Portfolio</title>
+    <title>{{page.prefijo}} {{page.nombre}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -17,6 +17,12 @@
       #main {margin-left: 120px}
       /* Eliminar márgenes del "contenido de la página" en pantallas pequeñas */
       @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+      #pPhoto {
+        mask-image: linear-gradient(
+          w3-black 80%,
+          transparent 100%
+        );
+      }
       .skill-bar {
         position: relative;
         height: 28px;
@@ -106,7 +112,7 @@
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">{{page.prefijo}}</span> {{page.nombre}}</h1>
     <p>{{page.descripcion}}</p>
-    <img src={{page.imgProfile}} alt={{page.nombre}} class="w3-image" width="992" height="1108">
+    <img id="pPhoto" src={{page.imgProfile}} alt={{page.nombre}} class="w3-image" width="992" height="1108">
   </header>
 
   <!-- Sección Sobre Mí -->
@@ -160,7 +166,7 @@
       <div class="w3-half">
         {% for post in site.posts %}
         <div class="w3-card-4 w3-margin w3-white"><a href={{post.url}}>
-          <img src={{post.img}} alt="Proyecto 1">
+          <img src={{posts.img}} alt={{titulo}}>
           <div class="w3-container">
             <h3>{{post.titulo}}</h3>
             <p>{{post.descripcion}}</p>
@@ -184,7 +190,7 @@
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ing.miguel.luna.l@gmail.com</p>
     </div><br>
     <p>Envíame un mensaje:</p>
-
+    <!--<to-do>agregar action_page</to-do>-->
     <form action="/action_page.php" target="_blank">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
