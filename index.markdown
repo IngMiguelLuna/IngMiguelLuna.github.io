@@ -4,6 +4,7 @@ layout: default
 prefijo: "Ing."
 # Nombre completo
 nombre: "Miguel Luna"
+imgProfile: "https://pbs.twimg.com/profile_images/1898127585696944128/_ZVNIy2E_400x400.jpg"
 # Descripción breve
 descripcion: "Ingeniero en Mecatrónica | Desarrollo de Software | AI | Sistemas Embebidos."
 # Acerca de mí
