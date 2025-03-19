@@ -6,7 +6,7 @@
 # feature for the data you need to update frequently.
 #
 # For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# 'bundle exec jekyll serve --livereload'. If you change this file, please restart the server process.
 #
 # If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
@@ -24,7 +24,7 @@ github_username:  IngMiguelLuna
 # Static img path
 defaults:
   - scope:
-      path: "assets/img"
+      path: "/assets/img"
     values:
       image: true
 
@@ -33,6 +33,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+#  - jekyll-coffeescript
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -43,14 +44,16 @@ plugins:
 # their entries' file path in the `include:` list.
 #
 exclude:
-  - index.html
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+sass:
+  style: compact
