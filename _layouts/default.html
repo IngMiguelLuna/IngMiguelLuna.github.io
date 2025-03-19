@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />-->
     <style>
       /* Contenido de assets/css/main.css */
       body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
@@ -71,13 +72,14 @@
         color: #64FFDA;
       }
     </style>
+    
   </head>
 <body class="w3-black">
 
 <!-- Barra de iconos (barra lateral - oculta en pantallas pequeñas) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Imagen de avatar en la esquina superior izquierda -->
-  <img id="pPhoto" src={{page.imgProfile}} style="width:100%">
+  <img id="pPhoto" src="{{page.imgProfile}}" style="width:100%">
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>INICIO</p>
@@ -112,7 +114,7 @@
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">{{page.prefijo}}</span> {{page.nombre}}</h1>
     <p>{{page.descripcion}}</p>
-    <img id="pPhoto" src={{page.imgProfile}} alt={{page.nombre}} class="w3-image" width="992" height="1108">
+    <img id="pPhoto" src="{{page.imgProfile}}" alt="{{page.nombre}}" class="w3-image" width="992" height="1108">
   </header>
 
   <!-- Sección Sobre Mí -->
@@ -168,9 +170,10 @@
           <div class="w3-card-4 w3-margin w3-white">
             <a href="{{ post.url }}">
               <div class="w3-container" id="mi-imagenes">
+                <img src="{{ page.img }}" alt="Atir">
               {% assign image_files = site.static_files | where: "image", true %}
               {% for myimage in image_files %}
-                <img src="{{ myimage.path }}" alt="Atir">
+                <img src="{{ page.img }}" alt="Atir">
               {% endfor %}
               </div>
             <div class="w3-container">
@@ -198,9 +201,9 @@
     </div><br>
     <p>Envíame un mensaje:</p>
     <!--<to-do>agregar action_page</to-do>-->
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email"></p>
+    <form action="action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name" autocomplete="name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email" autocomplete="email"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Asunto" required name="Subject"></p>
       <p><textarea class="w3-input w3-padding-16 w3-border" placeholder="Mensaje" required name="Message"></textarea></p>
       <p>
