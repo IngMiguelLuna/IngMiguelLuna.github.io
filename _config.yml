@@ -11,12 +11,7 @@
 # If you need help with YAML syntax, here are some quick references for you:
 # https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
 # https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+
 
 title: "Miguel Ángel Luna Blog"
 email: "ing.miguel.luna.l@gmail.com"
@@ -25,6 +20,13 @@ baseurl: "index.html" # the subpath of your site, e.g. /blog
 url: "https://ingmiguelluna.github.io./" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: Ing_MikeLuna
 github_username:  IngMiguelLuna
+
+# Static img path
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 # Build settings
 theme: minima
@@ -42,8 +44,6 @@ plugins:
 #
 exclude:
   - index.html
-  - assets/css/style.css
-  - assets/js/script.js
 #   - .sass-cache/
 #   - .jekyll-cache/
 #   - gemfiles/

@@ -164,15 +164,7 @@
     <!-- Cuadrícula para tarjetas de proyectos -->
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-half">
-        {% for post in site.posts %}
-        <div class="w3-card-4 w3-margin w3-white"><a href={{post.url}}>
-          <img src="{{ '/_assets/Atir.webp' | relative_url }}" alt="Atir">
-          <div class="w3-container">
-            <h3>{{post.titulo}}</h3>
-            <p>{{post.descripcion}}</p>
-          </div>
-        </a></div>
-        {% endfor %}
+        {content}
       </div>
     <!-- Fin de la cuadrícula de proyectos -->
     </div>
