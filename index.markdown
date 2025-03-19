@@ -4,7 +4,7 @@ layout: default
 prefijo: "Ing."
 # Nombre completo
 nombre: "Miguel Luna"
-imgProfile: "https://avatars.githubusercontent.com/u/179346487?v=4"
+imgProfile: "https://avatars.githubusercontent.com/u/179346487"
 # Descripción breve
 descripcion: "Ingeniero en Mecatrónica | Desarrollo de Software | AI | Sistemas Embebidos."
 # Acerca de mí
