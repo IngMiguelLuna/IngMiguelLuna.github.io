@@ -26,5 +26,5 @@ skill7: "Modelado en Blockbench"
 prc7: "100%"
 skill8: "Inglés"
 prc8: "75%"
-img: "https://1drv.ms/i/c/3ff52d86e7907f11/ERF_kOeGLfUggD_EJAAAAAAB8F028ZuFvzeSck-MDWppKw?e=NWfbs2"
+img: "https://my.microsoftpersonalcontent.com/_api/v2.1/drives/3FF52D86E7907F11/items/3FF52D86E7907F11!9412/thumbnails/0/c645x960/content?prefer=noredirect%2Cclosestavailablesize&cb=2022-09-14T16%3A23%3A26Z&eh=Scenario%3ABrowsePhoto"
 ---
