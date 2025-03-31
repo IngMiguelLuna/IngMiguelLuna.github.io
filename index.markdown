@@ -26,5 +26,5 @@ skill7: "Modelado en Blockbench"
 prc7: "100%"
 skill8: "Inglés"
 prc8: "75%"
-static.img: "assets/img/Atir.webp"
+img: "https://1drv.ms/i/c/3ff52d86e7907f11/ERF_kOeGLfUggD_EJAAAAAAB8F028ZuFvzeSck-MDWppKw?e=NWfbs2"
 ---
