@@ -35,10 +35,10 @@
         height: 100%;
         width: 0;
         background-color: #93bbb2;
-        transition: width 0.5s ease-in-out;
+        transition: width 1s ease-in-out;
       }
-      .skill-bar:hover div {
-        width: var(--skill-level);
+      .skill-bar.visible div {
+        width: calc(var(--skill-level) * 1%);
       }
       .w3-card-4 img {
         width: 100%;
@@ -71,8 +71,33 @@
         background-color: #000;
         color: #26619C;
       }
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        gap: 10px;
+        padding: 10px;
+      }
+      .grid-container > div {
+        color: #000;
+        padding: 10px;
+        font-size: 30px;
+        text-align: center;
+      }
     </style>
-    
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const skillBars = document.querySelectorAll(".skill-bar");
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target); // Stop observing once filled
+            }
+          });
+        });
+        skillBars.forEach((bar) => observer.observe(bar));
+      });
+    </script>
   </head>
 <body class="w3-black">
 
@@ -84,11 +109,11 @@
     <i class="fa fa-home w3-xxlarge"></i>
     <p>INICIO</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#aboutme" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-user w3-xxlarge"></i>
     <p>SOBRE MÍ</p>
   </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="#proyects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-eye w3-xxlarge"></i>
     <p>PROYECTOS</p>
   </a>
@@ -96,15 +121,20 @@
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>CONTACTO</p>
   </a>
+  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-info w3-xxlarge"></i>
+    <p>ACERCA DE</p>
+  </a>
 </nav>
 
 <!-- Barra de navegación en pantallas pequeñas (oculta en pantallas medianas y grandes) -->
 <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">INICIO</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">SOBRE MÍ</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PROYECTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACTO</a>
+    <a href="#" class="w3-bar-item w3-button fa fa-home" style="width:20% !important"></a>
+    <a href="#aboutme" class="w3-bar-item w3-button fa fa-user" style="width:20% !important"></a>
+    <a href="#proyects" class="w3-bar-item w3-button fa fa-eye" style="width:20% !important"></a>
+    <a href="#contact" class="w3-bar-item w3-button fa fa-envelope" style="width:20% !important"></a>
+    <a href="#about" class="w3-bar-item w3-button fa fa-info" style="width: 20% !important"></a>
   </div>
 </div>
 
@@ -118,7 +148,7 @@
   </header>
 
   <!-- Sección Sobre Mí -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="aboutme">
     <h2 class="w3-text-light-grey">Sobre Mí</h2>
     <hr style="width:200px" class="w3-opacity">
     <p>{{page.acercaDe}}</p>
@@ -159,19 +189,18 @@
   </div>
   
   <!-- Sección de Portafolio -->
-  <div class="w3-padding-64 w3-content" id="photos">
+  <div class="w3-padding-64 w3-content" id="proyects">
     <h2 class="w3-text-light-grey">Mis Proyectos</h2>
     <hr style="width:200px" class="w3-opacity">
 
     <!-- Cuadrícula para tarjetas de proyectos -->
     <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-complete">
+      <div class="grid-container">
         {% for post in site.posts %}
           <div class="w3-card-4 w3-margin w3-dark-grey w3-hover-opacity">
             <a href="{{ post.url }}">
               <div class="w3-container" id="mi-imagenes">
                 <img src="{{post.img}}" alt="Atir">
-                <img src="{{post.img2}}" alt="Atir">
               </div>
             <div class="w3-container">
               <h3>{{ post.titulo }}</h3>
@@ -179,7 +208,7 @@
             </div>
             </a>
           </div>
-          {% endfor %}
+        {% endfor %}
       </div>
     <!-- Fin de la cuadrícula de proyectos -->
     </div>
@@ -211,14 +240,22 @@
     </form>
   <!-- Fin de la sección de Contacto -->
   </div>
-  
-<!-- Pie de página -->
-<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-  <i class="fa fa-instagram w3-hover-opacity"></i>
-  <i class="fa fa-twitter w3-hover-opacity"></i>
-  <i class="fa fa-linkedin w3-hover-opacity"></i>
-<!-- Fin del pie de página -->
-</footer>
+
+  <!--Acerca de-->
+  <div class="w3-padding-64 w3-content w3-text-grey" id="about">
+    <h2 class="w3-text-light-grey">Acerca de</h2>
+    <hr style="width:200px" class="w3-opacity">
+    <p>Este es un sitio web tipo portafolio para mostrar mis proyectos y habilidades en busqueda de oportunidades</p>
+    <p>Para más información, visita mi perfil en GitHub.</p>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <!-- Fin del pie de página -->
+  </footer>
 
 <!-- FIN DEL CONTENIDO DE LA PÁGINA -->
 </div>
