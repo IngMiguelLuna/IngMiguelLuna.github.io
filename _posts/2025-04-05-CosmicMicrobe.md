@@ -4,8 +4,8 @@ autor: MikeLuna
 titulo: "CosmicMicrobe"
 descripcion: "Videojuego 2D para mobiles"
 date: "05/04/2025"
-img: "https://1drv.ms/i/c/3ff52d86e7907f11/IQQVwR-ymTDWSpKhk0PF30FXAQkArPmP25dZWQOmZLH9Wpk?width=1024"
-img2: "https://1drv.ms/i/c/3ff52d86e7907f11/IQSkFuvF8HKKSYKkukHIA-n4AZJE6GR0UDRyOPEJNrgxeh4?width=1024"
+img: "https://1drv.ms/i/c/3ff52d86e7907f11/IQQVwR-ymTDWSpKhk0PF30FXAQkArPmP25dZWQOmZLH9Wpk?width=auto"
+img2: "https://1drv.ms/i/c/3ff52d86e7907f11/IQSkFuvF8HKKSYKkukHIA-n4AZJE6GR0UDRyOPEJNrgxeh4?width=auto"
 ---
 
 # Cosmic Microbe: The Battle Against Amoebius
@@ -41,16 +41,16 @@ Clases:
 - Hombres Gato
 
 Items:
-    - Recursos:
-        - Minerales (hierro, cobre, etc)
-        - Chatarra
-        - Partes de otras naves
-    - PowerUps / mejoras de nave:
-        - Escudos (de Fuerza, Termicos, de Impacto)
-        - Integridad de nave (vida)
-        - Armamento (Polvora, Electricos, Explosivos, Enganche)
-        - Velocidad (Motores, warp)
-        - Extra (autoapuntado, seguimiento, asistencia, autoestacionarse, etc)
+- Recursos:
+    - Minerales (hierro, cobre, etc)
+    - Chatarra
+    - Partes de otras naves
+- PowerUps / mejoras de nave:
+    - Escudos (de Fuerza, Termicos, de Impacto)
+    - Integridad de nave (vida)
+    - Armamento (Polvora, Electricos, Explosivos, Enganche)
+    - Velocidad (Motores, warp)
+    - Extra (autoapuntado, seguimiento, asistencia, autoestacionarse, etc)
 
 Estructuras:
 - Asteroides
