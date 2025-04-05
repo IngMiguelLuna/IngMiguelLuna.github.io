@@ -26,7 +26,6 @@ skill7: "Modelado en Blockbench"
 prc7: "100%"
 skill8: "Inglés"
 prc8: "75%"
-#Contacto
 email: "ing.miguel.luna.l@gmail.com"
 ubi: "Estado de México, MX"
 tel: "+52 ---- ----"
