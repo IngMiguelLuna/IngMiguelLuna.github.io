@@ -5,7 +5,7 @@ titulo: "CosmicMicrobe"
 descripcion: "Videojuego 2D para mobiles"
 date: "05/04/2025"
 img: "https://1drv.ms/i/c/3ff52d86e7907f11/IQQVwR-ymTDWSpKhk0PF30FXAQkArPmP25dZWQOmZLH9Wpk?width=auto"
-img2: "https://1drv.ms/i/c/3ff52d86e7907f11/IQSkFuvF8HKKSYKkukHIA-n4AZJE6GR0UDRyOPEJNrgxeh4?width=auto"
+img2: ""
 ---
 
 # Cosmic Microbe: The Battle Against Amoebius
@@ -23,6 +23,8 @@ El juego tiene un avance aproximado del 30% cuenta con mecanicas basicas de juga
 - Habilidades (Ninguna habilidad añadida)
 - Tienda (sin items)
 Actualmente el proyecto esta en pausa hasta que pueda resolver problemas economicos.
+
+<img src="https://1drv.ms/i/c/3ff52d86e7907f11/IQSkFuvF8HKKSYKkukHIA-n4AZJE6GR0UDRyOPEJNrgxeh4?width=auto" width="100%" height="100%">
 
 **A desarrollar**
 Naves inspiradas en microorganismos:
@@ -65,6 +67,8 @@ Jugabilidad:
 - Multijugador
 - Misiones Campaña cooperativas
 - Personalizacion completa de nave
+
+<iframe src="https://1drv.ms/v/c/3ff52d86e7907f11/IQT8cWb_pgb4QKZYKk6rFakpAeAWao_h1TXMksJ0wnpL_Vs" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
 
 Si es de tu interés y quieres que el juego se termine, puedes aportar algo. Si solo una persona aporta sacaré una demo pre alfa al 40% y mas conforme siga el apoyo.
 [link patreon]
