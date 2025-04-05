@@ -41,11 +41,11 @@ Clases:
 - Hombres Gato
 
 Items:
-    Recursos:
+    - Recursos:
         - Minerales (hierro, cobre, etc)
         - Chatarra
         - Partes de otras naves
-    PowerUps / mejoras de nave:
+    - PowerUps / mejoras de nave:
         - Escudos (de Fuerza, Termicos, de Impacto)
         - Integridad de nave (vida)
         - Armamento (Polvora, Electricos, Explosivos, Enganche)
