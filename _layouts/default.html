@@ -180,8 +180,8 @@
     <h2 class="w3-text-light-grey">Mis Proyectos</h2>
     <hr style="width:200px" class="w3-opacity">
 
-    <!-- Cuadrícula para tarjetas de proyectos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
+    <!-- Cuadrícula para tarjetas de proyectos pantallas grandes -->
+    <div class="w3-row-padding w3-hide-small" style="margin:0 -16px">
       <div class="grid-container">
         {% for post in site.posts %}
           <div class="w3-card-4 w3-margin w3-dark-grey w3-hover-opacity">
@@ -198,6 +198,27 @@
         {% endfor %}
       </div>
     <!-- Fin de la cuadrícula de proyectos -->
+    </div>
+    <!-- Cuadrícula para tarjetas de proyectos pantallas chicas-->
+    <div class="w3-row-padding w3-hide-large w3-hide-medium" style="margin:0 -16px">
+      <div class="w3-row-padding w3-center" id="mi-imagenes">
+        {% for post in site.posts %}
+          <div class="w3-col l3 m6 w3-margin-bottom">
+            <div class="w3-card-4 w3-dark-grey w3-hover-opacity">
+              <a href="{{ post.url }}">
+                <div class="w3-container" id="mi-imagenes">
+                  <img src="{{post.img}}" alt="Atir">
+                </div>
+              <div class="w3-container">
+                <h3>{{ post.titulo }}</h3>
+                <p>{{ post.descripcion }}</p>
+              </div>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <!-- Fin de la cuadrícula de proyectos -->
     </div>
   <!-- Fin de la sección de Portafolio -->
   </div>
