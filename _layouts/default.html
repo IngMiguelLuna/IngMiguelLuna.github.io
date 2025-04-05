@@ -34,11 +34,11 @@
       .skill-bar div {
         height: 100%;
         width: 0;
-        background-color: #93bbb2;
-        transition: width 1s ease-in-out;
+        background-color: #26619C;
+        transition: width 0.5s ease-in-out;
       }
-      .skill-bar.visible div {
-        width: calc(var(--skill-level) * 1%);
+      .skill-bar:hover div {
+        width: var(--skill-level);
       }
       .w3-card-4 img {
         width: 100%;
@@ -62,14 +62,14 @@
         resize: vertical;
       }
       .w3-button.w3-light-grey.w3-hover-black {
-        background-color: #26619C;
+        background-color: #a0a0a0;
         color: #000;
         border: none;
         transition: background-color 0.3s, color 0.3s;
       }
       .w3-button.w3-light-grey.w3-hover-black:hover {
         background-color: #000;
-        color: #26619C;
+        color: #a0a0a0;
       }
       .grid-container {
         display: grid;
@@ -84,20 +84,7 @@
         text-align: center;
       }
     </style>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const skillBars = document.querySelectorAll(".skill-bar");
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target); // Stop observing once filled
-            }
-          });
-        });
-        skillBars.forEach((bar) => observer.observe(bar));
-      });
-    </script>
+    
   </head>
 <body class="w3-black">
 
@@ -221,9 +208,9 @@
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Ciudad de México, MX</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Teléfono: +52 55 1234 5678</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: ing.miguel.luna.l@gmail.com</p>
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> {{ubi}}</p>
+      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Teléfono: {{tel}}</p>
+      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: {{email}}</p>
     </div><br>
     <p>Envíame un mensaje:</p>
     <!--<to-do>agregar action_page</to-do>-->
@@ -245,8 +232,8 @@
   <div class="w3-padding-64 w3-content w3-text-grey" id="about">
     <h2 class="w3-text-light-grey">Acerca de</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>Este es un sitio web tipo portafolio para mostrar mis proyectos y habilidades en busqueda de oportunidades</p>
-    <p>Para más información, visita mi perfil en GitHub.</p>
+    <p>{{aboutme}}</p>
+    <p>{{aboutme2}}}</p>
   </div>
 
   <!-- Pie de página -->

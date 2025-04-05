@@ -36,7 +36,6 @@
 <body class="w3-black">
   <!-- Sidebar menu -->
   <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <img id="pPhoto" src="{{page.imgProfile}}" style="width:100%">
     <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i class="fa fa-home w3-xxlarge"></i>
       <p>INICIO</p>
@@ -54,8 +53,12 @@
   <div class="w3-padding-large" id="main">
     <div style="background-color: #222; padding: 20px; border-radius: 10px;">
       <h1>{{post.titulo}}</h1>
-      <p>{{post.date | date_to_string}} - {{post.autor}}</p>
+      <p>{{post.descripcion}}</p>
+      <p><strong>Autor:</strong> {{post.autor}}</p>
+      <p><strong>Fecha:</strong> {{post.date | date_to_string}}</p>
+      <img src="{{post.img}}" alt="{{post.titulo}}">
       <p>{{content}}</p>
+      <img src="{{post.img2}}" alt="dev{{post.titulo}}">
     </div>
   </div>
 </body>
