@@ -25,4 +25,4 @@ Ambas animaciones se pueden combinar o reproducir en simultaneo para un movimien
 **Adquisicion**
 Eres libre de usar el modelo para cualquier cosa, puedes pedirlo en la seccion de contacto si aun no he subido algun link de descarga.
 
-[ link ]
+link <>

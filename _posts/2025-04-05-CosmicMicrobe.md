@@ -74,4 +74,4 @@ Jugabilidad:
 
 > Si es de tu interés y quieres que el juego se termine, puedes aportar algo. Si solo una persona aporta sacaré una demo pre alfa al 40% y mas conforme siga el apoyo.
 >
-> *[link patreon]*
+> *[link patreon]* <>
