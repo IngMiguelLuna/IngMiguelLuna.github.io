@@ -115,16 +115,38 @@
       body.classList.toggle("w3-black");
       body.classList.toggle("w3-white");
 
-      const elements = document.querySelectorAll(".w3-dark-grey");
-      if (elements.length === 0) return; // Verificar que hay elementos con la clase
-
+      const elements = document.querySelectorAll(".w3-dark-grey, .w3-text-grey, .w3-asphalt, .fa");
       elements.forEach(el => {
         if (body.classList.contains("w3-white")) {
-          el.classList.remove("w3-dark-grey");
-          el.classList.add("w3-light-grey");
+          if (el.classList.contains("w3-dark-grey")) {
+            el.classList.remove("w3-dark-grey");
+            el.classList.add("w3-light-grey");
+          }
+          if (el.classList.contains("w3-text-grey")) {
+            el.classList.remove("w3-text-grey");
+            el.classList.add("w3-text-black");
+          }
+          if (el.classList.contains("w3-asphalt")) {
+            el.style.backgroundColor = "#d3d3d3"; // Light grey
+          }
+          if (el.classList.contains("fa")) {
+            el.style.color = "#000"; // Black for icons
+          }
         } else {
-          el.classList.remove("w3-light-grey");
-          el.classList.add("w3-dark-grey");
+          if (el.classList.contains("w3-light-grey")) {
+            el.classList.remove("w3-light-grey");
+            el.classList.add("w3-dark-grey");
+          }
+          if (el.classList.contains("w3-text-black")) {
+            el.classList.remove("w3-text-black");
+            el.classList.add("w3-text-grey");
+          }
+          if (el.classList.contains("w3-asphalt")) {
+            el.style.backgroundColor = "#2f4f4f"; // Dark slate grey
+          }
+          if (el.classList.contains("fa")) {
+            el.style.color = "#fff"; // White for icons
+          }
         }
       });
     }
