@@ -31,4 +31,7 @@ ubi: "Estado de México, MX"
 tel: "+52 ---- ----"
 aboutme: "Este es un sitio web tipo portafolio para mostrar mis proyectos y habilidades en busqueda de oportunidades"
 aboutme2: "Para más información, visita mi perfil en GitHub."
+#links
+x: "https://x.com/Ing_MikeLuna"
+ig: "https://www.instagram.com/mikirokorokomiki/"
 ---

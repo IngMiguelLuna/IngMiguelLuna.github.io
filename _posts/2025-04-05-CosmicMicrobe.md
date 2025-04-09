@@ -6,6 +6,9 @@ descripcion: "Videojuego 2D para mobiles"
 date: "05/04/2025"
 img: "https://1drv.ms/i/c/3ff52d86e7907f11/IQQVwR-ymTDWSpKhk0PF30FXAQkArPmP25dZWQOmZLH9Wpk?width=auto"
 img2: ""
+#links
+x: "https://x.com/Ing_MikeLuna"
+ig: "https://www.instagram.com/mikirokorokomiki/"
 ---
 
 # Cosmic Microbe: The Battle Against Amoebius
