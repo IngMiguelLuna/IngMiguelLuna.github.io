@@ -66,7 +66,7 @@
 
   <!-- Main content -->
   <div class="w3-padding-large" id="main">
-    <div style="background-color: #222; padding: 20px; border-radius: 10px;">
+    <div class="w3-dark-grey" style=" padding: 20px; border-radius: 10px;">
       <h1>{{page.titulo}}</h1>
       <p>{{page.descripcion}}</p>
       <p>Autor: {{page.autor}}</p>
@@ -112,6 +112,17 @@
       const body = document.body;
       body.classList.toggle("w3-black");
       body.classList.toggle("w3-white");
+
+      const elements = document.querySelectorAll(".w3-dark-grey");
+      elements.forEach(el => {
+        if (body.classList.contains("w3-white")) {
+          el.classList.remove("w3-dark-grey");
+          el.classList.add("w3-light-grey");
+        } else {
+          el.classList.remove("w3-light-grey");
+          el.classList.add("w3-dark-grey");
+        }
+      });
     }
   </script>
 

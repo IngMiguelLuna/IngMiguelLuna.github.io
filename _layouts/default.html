@@ -280,13 +280,24 @@
 <button onclick="toggleTheme()" class="w3-button w3-black w3-hover-grey" style="position: fixed; bottom: 20px; left: 20px;">🌙/☀️</button>
 
 <script>
-  // Modo Oscuro/Claro
-  function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle("w3-black");
-    body.classList.toggle("w3-white");
-  }
-</script>
+    // Modo Oscuro/Claro
+    function toggleTheme() {
+      const body = document.body;
+      body.classList.toggle("w3-black");
+      body.classList.toggle("w3-white");
+
+      const elements = document.querySelectorAll(".w3-dark-grey");
+      elements.forEach(el => {
+        if (body.classList.contains("w3-white")) {
+          el.classList.remove("w3-dark-grey");
+          el.classList.add("w3-light-grey");
+        } else {
+          el.classList.remove("w3-light-grey");
+          el.classList.add("w3-dark-grey");
+        }
+      });
+    }
+  </script>
 
 </body>
 </html>
