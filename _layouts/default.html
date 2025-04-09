@@ -4,6 +4,9 @@
     <title>{{page.prefijo}} {{page.nombre}}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Blog personal de Ing. Miguel Luna, donde comparto mis proyectos y conocimientos.">
+    <meta name="keywords" content="blog, ingeniería, tecnología, proyectos, Miguel Luna">
+    <meta name="author" content="Miguel Luna">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -272,6 +275,18 @@
 
 <!-- FIN DEL CONTENIDO DE LA PÁGINA -->
 </div>
+
+<!-- Dark/Light Mode Toggle -->
+<button onclick="toggleTheme()" class="w3-button w3-black w3-hover-grey" style="position: fixed; bottom: 20px; left: 20px;">🌙/☀️</button>
+
+<script>
+  // Modo Oscuro/Claro
+  function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle("w3-black");
+    body.classList.toggle("w3-white");
+  }
+</script>
 
 </body>
 </html>
