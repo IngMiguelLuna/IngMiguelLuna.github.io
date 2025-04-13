@@ -9,6 +9,7 @@ img2: ""
 #links
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
+github: "https://github.com/IngMiguelLuna"
 ---
 
 # DoubleChess game 
