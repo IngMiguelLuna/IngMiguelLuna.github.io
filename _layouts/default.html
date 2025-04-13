@@ -242,8 +242,7 @@
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: {{page.email}}</p>
     </div><br>
     <p>Envíame un mensaje:</p>
-    <!--<to-do>agregar action_page</to-do>-->
-    <form action="action_page.php" target="_blank">
+    <form id="contactForm">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name" autocomplete="name"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email" autocomplete="email"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Asunto" required name="Subject"></p>
@@ -324,6 +323,20 @@
         }
       });
     }
+
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Evitar el envío del formulario
+
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData.entries());
+
+      // Aquí puedes enviar los datos a un servicio de correo electrónico o mostrar un mensaje
+      console.log('Datos del formulario:', data);
+      alert('Gracias por tu mensaje, ' + data.Name + '! Nos pondremos en contacto contigo pronto.');
+
+      // Opcional: Reiniciar el formulario
+      event.target.reset();
+    });
   </script>
 
 </body>
