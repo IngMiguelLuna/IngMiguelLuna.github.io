@@ -34,4 +34,5 @@ aboutme2: "Para más información, visita mi perfil en GitHub."
 #links
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
+github: "https://github.com/IngMiguelLuna"
 ---
