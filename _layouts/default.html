@@ -244,7 +244,7 @@
     <p>Envíame un mensaje:</p>
     <form id="contactForm">
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name" autocomplete="name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Email" required name="Email" autocomplete="email"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Email" required name="Email" autocomplete="email"></p>
       <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Asunto" required name="Subject"></p>
       <p><textarea class="w3-input w3-padding-16 w3-border" placeholder="Mensaje" required name="Message"></textarea></p>
       <p>
@@ -324,18 +324,31 @@
       });
     }
 
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
+    document.getElementById('contactForm').addEventListener('submit', async function(event) {
       event.preventDefault(); // Evitar el envío del formulario
 
       const formData = new FormData(event.target);
       const data = Object.fromEntries(formData.entries());
 
-      // Aquí puedes enviar los datos a un servicio de correo electrónico o mostrar un mensaje
-      console.log('Datos del formulario:', data);
-      alert('Gracias por tu mensaje, ' + data.Name + '! Nos pondremos en contacto contigo pronto.');
+      try {
+        const response = await fetch('https://formspree.io/f/mldjzpng', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        });
 
-      // Opcional: Reiniciar el formulario
-      event.target.reset();
+        if (response.ok) {
+          alert('Gracias por tu mensaje, ' + data.Name + '! Nos pondremos en contacto contigo pronto.');
+          event.target.reset(); // Reiniciar el formulario
+        } else {
+          alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.');
+        }
+      } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+        alert('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.');
+      }
     });
   </script>
 
