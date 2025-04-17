@@ -1,6 +1,7 @@
 ---
 layout: advice
 titulo: "Aviso de Privacidad"
+permalink: /legal/avisoDePrivacidad
 #links
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
