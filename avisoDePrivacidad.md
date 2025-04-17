@@ -7,8 +7,6 @@ x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
 ---
-# Aviso de Privacidad
-
 ## Identidad y domicilio del responsable
 
 Miguel Angel Luna López, con domicilio en Ecatepec de Morelos, Estado de México, México, y correo de contacto ing.miguel.luna.l@gmail.com, es el responsable del tratamiento de sus datos personales conforme a este aviso de privacidad.
