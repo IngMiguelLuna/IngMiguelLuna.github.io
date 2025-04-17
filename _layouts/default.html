@@ -195,7 +195,7 @@
           <div class="w3-card-4 w3-margin w3-dark-grey w3-hover-opacity">
             <a href="{{ post.url }}">
               <div class="w3-container" id="mi-imagenes">
-                <img src="{{post.img}}" alt="Atir">
+                <img src="{{post.img}}" alt="">
               </div>
             <div class="w3-container">
               <h3>{{ post.titulo }}</h3>
@@ -252,6 +252,10 @@
           <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
         </button>
       </p>
+      <p style="font-size: small;">
+         {{content}}
+      </p>
+      
     </form>
   <!-- Fin de la sección de Contacto -->
   </div>

@@ -35,4 +35,6 @@ aboutme2: "Para más información, visita mi perfil en GitHub."
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
+
 ---
+La información proporcionada será utilizada únicamente para responder a tu mensaje. Para más detalles consulta nuestro <a href="/avisoDePrivacidad" target="_blank">Aviso de Privacidad</a>.
