@@ -26,22 +26,6 @@
           transparent
         );
       }
-      .skill-bar {
-        position: relative;
-        height: 28px;
-        background-color: #ddd;
-        border-radius: 5px;
-        overflow: hidden;
-      }
-      .skill-bar div {
-        height: 100%;
-        width: 0%;
-        background-color: #26619C;
-        transition: width 0.5s ease-in-out;
-      }
-      .skill-bar:hover div {
-        width: var(--skill-level);
-      }
       .w3-card-4 img {
         width: 100%;
         height: auto;
@@ -148,37 +132,12 @@
     <hr style="width:200px" class="w3-opacity">
     <p>{{page.acercaDe}}</p>
     <h3 class="w3-padding-16 w3-text-light-grey">Mis Habilidades</h3>
-    <p class="w3-wide">{{page.skill1}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc1}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill2}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc2}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill3}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc3}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill4}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc4}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill5}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc5}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill6}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc6}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill7}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc7}};">
-      <div></div>
-    </div>
-    <p class="w3-wide">{{page.skill8}}</p>
-    <div class="skill-bar" style="--skill-level: {{page.prc8}};">
-      <div></div>
+    <div class="w3-row-padding w3-center">
+      {% for habilidad in site.data.habilidades %}
+        <div class="w3-col m3 w3-margin-bottom">
+          <p class="w3-wide">{{ habilidad.nombre }}</p>
+        </div>
+      {% endfor %}
     </div>
   <!-- Fin de la sección Sobre Mí -->
   </div>
@@ -270,7 +229,7 @@
 
   <!-- Pie de página -->
   <footer class="w3-center w3-padding-16 w3-black">
-    <p>© 2025 Ing. Miguel Luna. Todos los derechos reservados.</p>
+    <p>{{page.infoFooter}}</p>
     <div>
       <a href="{{page.x}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-twitter"></i></a>
       <a href="{{page.ig}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-instagram"></i></a>
