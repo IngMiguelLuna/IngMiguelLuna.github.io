@@ -10,6 +10,7 @@ img2: ""
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
+patreon: https://patreon.com/IngMiguelLuna?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink
 ---
 
 # Cosmic Microbe: The Battle Against Amoebius
@@ -78,4 +79,4 @@ Jugabilidad:
 
 > Si es de tu interés y quieres que el juego se termine, puedes aportar algo. Si solo una persona aporta sacaré una demo pre alfa al 40% y mas conforme siga el apoyo.
 >
-> *[link patreon]* <>
+> [Patreon](https://patreon.com/IngMiguelLuna?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink)

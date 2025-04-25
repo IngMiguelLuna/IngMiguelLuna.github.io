@@ -18,6 +18,8 @@ aboutme2: "Página desarrollada en Ruby Jekyll. Para más información, visita m
 x: "https://x.com/Ing_MikeLuna"
 ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
+patreon: https://patreon.com/IngMiguelLuna?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink
 infoFooter: "© 2025 Ing. Miguel Luna. Todos los derechos reservados." 
+
 ---
 La información proporcionada será utilizada únicamente para responder a tu mensaje. Para más detalles consulta nuestro <a href="/legal/avisoDePrivacidad" target="_blank">Aviso de Privacidad</a>.
