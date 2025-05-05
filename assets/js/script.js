@@ -1,28 +1,33 @@
 // Theme toggle functionality
 function toggleTheme() {
-    const body = document.body;
-    if (!body) return;
+    const html = document.documentElement;
+    html.classList.toggle('dark');
 
-    body.classList.toggle('bg-black');
-    body.classList.toggle('bg-white');
-    body.classList.toggle('text-white');
-    body.classList.toggle('text-black');
+    // Toggle base theme classes
+    document.body.classList.toggle('bg-white');
+    document.body.classList.toggle('bg-gray-900');
+    document.body.classList.toggle('text-black');
+    document.body.classList.toggle('text-white');
 
-    document.querySelectorAll('.bg-gray-800, .text-gray-300, .fa').forEach(el => {
-        if (body.classList.contains('bg-white')) {
-            el.classList.replace('bg-gray-800', 'bg-gray-200');
-            el.classList.replace('text-gray-300', 'text-gray-700');
-            if (el.classList.contains('fa')) {
-                el.style.color = '#000';
-            }
-        } else {
-            el.classList.replace('bg-gray-200', 'bg-gray-800');
-            el.classList.replace('text-gray-700', 'text-gray-300');
-            if (el.classList.contains('fa')) {
-                el.style.color = '#fff';
-            }
-        }
+    // Update navigation and other components
+    document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.toggle('text-gray-700');
+        el.classList.toggle('text-gray-300');
+        el.classList.toggle('hover:text-black');
+        el.classList.toggle('hover:text-white');
     });
+
+    // Update cards and containers
+    document.querySelectorAll('.project-card').forEach(el => {
+        el.classList.toggle('bg-white');
+        el.classList.toggle('bg-gray-800');
+        el.classList.toggle('shadow-lg');
+    });
+}
+
+// Set initial theme based on user preference
+if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    toggleTheme();
 }
 
 // Form handling

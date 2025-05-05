@@ -12,31 +12,44 @@
 
     /* Layout */
     .sidebar {
-        width: 120px;
-        background: #222;
+        @apply fixed h-screen w-32 bg-gray-900 dark:bg-gray-800;
+    }
+
+    /* Navigation */
+    .nav-item {
+        @apply block py-2 px-4 transition-colors duration-200;
+    }
+
+    /* Responsive navigation */
+    .mobile-nav {
+        @apply block sm:hidden fixed top-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50;
+    }
+
+    .desktop-nav {
+        @apply hidden sm:block;
     }
 
     /* Card styles */
     .project-card {
-        @apply bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300;
-    }
-
-    .project-card:hover {
-        @apply scale-105 shadow-xl;
+        @apply bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg 
+               transform transition-all duration-300 hover:scale-105;
     }
 
     /* Form styles */
     .contact-input {
-        @apply w-full p-4 border bg-transparent text-white border-gray-600 rounded;
+        @apply w-full p-4 bg-transparent border border-gray-300 dark:border-gray-600 
+               rounded text-gray-900 dark:text-white;
     }
 
     .contact-button {
-        @apply px-6 py-3 bg-gray-300 text-black hover:bg-black hover:text-gray-300 transition-colors;
+        @apply px-6 py-3 bg-gray-800 text-white hover:bg-gray-700 
+               dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300 
+               transition-colors duration-200;
     }
 
     /* Grid layout */
     .grid-container {
-        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
     }
 
     /* Aspect ratio container */
