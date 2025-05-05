@@ -13,29 +13,34 @@
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-['Montserrat']">
 
+<!-- Sidebar Toggle Button -->
+<button onclick="toggleSidebar()" class="fixed top-4 left-4 z-50 p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors rounded-full sm:block hidden">
+    <i id="sidebarIcon" class="fa fa-times"></i>
+</button>
+
 <!-- Sidebar - hidden on small screens -->
-<nav class="sidebar fixed top-0 left-0 h-full hidden sm:block text-center bg-gray-100 dark:bg-gray-800 shadow-lg">
+<nav id="sidebar" class="sidebar fixed top-0 left-0 h-full hidden sm:block text-center bg-gray-100 dark:bg-gray-800 shadow-lg w-24 transform transition-transform duration-300 ease-in-out">
     <!-- Avatar -->
     <img src="{{page.imgProfile}}" class="w-full h-[18%] object-cover" alt="profile">
-    <a href="#" class="block p-4 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-        <i class="fa fa-home text-4xl"></i>
-        <p>INICIO</p>
+    <a href="#" class="block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <i class="fa fa-home text-2xl"></i>
+        <p class="text-xs mt-1">INICIO</p>
     </a>
-    <a href="#aboutme" class="block p-4 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-        <i class="fa fa-user text-4xl"></i>
-        <p>SOBRE MÍ</p>
+    <a href="#aboutme" class="block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <i class="fa fa-user text-2xl"></i>
+        <p class="text-xs mt-1">SOBRE MÍ</p>
     </a>
-    <a href="#proyects" class="block p-4 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-        <i class="fa fa-eye text-4xl"></i>
-        <p>PROYECTOS</p>
+    <a href="#proyects" class="block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <i class="fa fa-eye text-2xl"></i>
+        <p class="text-xs mt-1">PROYECTOS</p>
     </a>
-    <a href="#contact" class="block p-4 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-        <i class="fa fa-envelope text-4xl"></i>
-        <p>CONTACTO</p>
+    <a href="#contact" class="block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <i class="fa fa-envelope text-2xl"></i>
+        <p class="text-xs mt-1">CONTACTO</p>
     </a>
-    <a href="#about" class="block p-4 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
-        <i class="fa fa-info text-4xl"></i>
-        <p>ACERCA DE</p>
+    <a href="#about" class="block p-2 text-gray-900 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        <i class="fa fa-info text-2xl"></i>
+        <p class="text-xs mt-1">ACERCA DE</p>
     </a>
 </nav>
 
@@ -61,7 +66,7 @@
 </div>
 
 <!-- Page Content -->
-<div class="sm:ml-32 p-8" id="main">
+<div class="sm:ml-24 p-8" id="main">
     <!-- Header/Home -->
     <header class="text-center py-8" id="home">
         <h1 class="text-7xl mb-4 text-gray-900 dark:text-white">
@@ -170,7 +175,7 @@
 </div>
 
 <!-- Theme Toggle Button -->
-<button onclick="toggleTheme()" class="fixed bottom-5 left-5 p-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-white rounded">
+<button onclick="toggleTheme()" class="fixed bottom-20 right-5 p-1 text-xs bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-white rounded-full z-50">
     🌙/☀️
 </button>
 

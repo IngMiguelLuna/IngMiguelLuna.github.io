@@ -43,3 +43,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Sidebar functionality
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const main = document.getElementById('main');
+    const sidebarIcon = document.getElementById('sidebarIcon');
+    
+    if (sidebar.classList.contains('-translate-x-full')) {
+        // Show sidebar
+        sidebar.classList.remove('-translate-x-full');
+        main.classList.remove('sm:ml-0');
+        main.classList.add('sm:ml-24');
+        sidebarIcon.classList.remove('fa-bars');
+        sidebarIcon.classList.add('fa-times');
+    } else {
+        // Hide sidebar
+        sidebar.classList.add('-translate-x-full');
+        main.classList.remove('sm:ml-24');
+        main.classList.add('sm:ml-0');
+        sidebarIcon.classList.remove('fa-times');
+        sidebarIcon.classList.add('fa-bars');
+    }
+}
+
+// Initialize sidebar state
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+        sidebar.classList.remove('-translate-x-full');
+    }
+});
