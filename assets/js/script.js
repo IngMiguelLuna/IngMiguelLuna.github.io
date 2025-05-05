@@ -4,24 +4,48 @@ function toggleTheme() {
     html.classList.toggle('dark');
 
     // Toggle base theme classes
-    document.body.classList.toggle('bg-white');
-    document.body.classList.toggle('bg-gray-900');
-    document.body.classList.toggle('text-black');
-    document.body.classList.toggle('text-white');
+    const body = document.body;
+    body.classList.toggle('bg-white');
+    body.classList.toggle('bg-black');
+    body.classList.toggle('text-gray-900');
+    body.classList.toggle('text-white');
 
-    // Update navigation and other components
-    document.querySelectorAll('.nav-item').forEach(el => {
-        el.classList.toggle('text-gray-700');
-        el.classList.toggle('text-gray-300');
-        el.classList.toggle('hover:text-black');
-        el.classList.toggle('hover:text-white');
+    // Update headings and text
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+        el.classList.toggle('text-gray-900');
+        el.classList.toggle('text-white');
     });
 
-    // Update cards and containers
+    // Update paragraphs and other text elements
+    document.querySelectorAll('p, span, a:not(.fa)').forEach(el => {
+        el.classList.toggle('text-gray-700');
+        el.classList.toggle('text-gray-300');
+    });
+
+    // Update icons
+    document.querySelectorAll('.fa').forEach(el => {
+        el.classList.toggle('text-gray-900');
+        el.classList.toggle('text-white');
+    });
+
+    // Update project cards
     document.querySelectorAll('.project-card').forEach(el => {
         el.classList.toggle('bg-white');
         el.classList.toggle('bg-gray-800');
-        el.classList.toggle('shadow-lg');
+    });
+
+    // Update navigation elements
+    document.querySelectorAll('.nav-item').forEach(el => {
+        el.classList.toggle('hover:bg-gray-200');
+        el.classList.toggle('hover:bg-gray-800');
+    });
+
+    // Update form inputs
+    document.querySelectorAll('.contact-input').forEach(el => {
+        el.classList.toggle('border-gray-300');
+        el.classList.toggle('border-gray-600');
+        el.classList.toggle('text-gray-900');
+        el.classList.toggle('text-white');
     });
 }
 

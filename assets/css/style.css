@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    /* Asegurar que el texto sea legible en modo claro */
+    p, span, a {
+        @apply text-gray-700 dark:text-gray-300;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        @apply text-gray-900 dark:text-white;
+    }
+}
+
 @layer components {
     /* Profile photo effect */
     #pPhoto {
@@ -12,17 +23,20 @@
 
     /* Layout */
     .sidebar {
-        @apply fixed h-screen w-32 bg-gray-900 dark:bg-gray-800;
+        @apply fixed h-screen w-32 bg-gray-100 dark:bg-gray-900 shadow-lg;
     }
 
     /* Navigation */
     .nav-item {
-        @apply block py-2 px-4 transition-colors duration-200;
+        @apply block py-2 px-4 text-gray-900 dark:text-white 
+               hover:bg-gray-200 dark:hover:bg-gray-800 
+               transition-colors duration-200;
     }
 
     /* Responsive navigation */
     .mobile-nav {
-        @apply block sm:hidden fixed top-0 w-full bg-white dark:bg-gray-900 shadow-lg z-50;
+        @apply block sm:hidden fixed top-0 w-full 
+               bg-gray-100 dark:bg-gray-900 shadow-lg z-50;
     }
 
     .desktop-nav {
@@ -31,19 +45,23 @@
 
     /* Card styles */
     .project-card {
-        @apply bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg 
-               transform transition-all duration-300 hover:scale-105;
+        @apply bg-white dark:bg-gray-800 rounded-lg overflow-hidden 
+               shadow-lg transform transition-all duration-300 
+               hover:scale-105;
     }
 
     /* Form styles */
     .contact-input {
-        @apply w-full p-4 bg-transparent border border-gray-300 dark:border-gray-600 
+        @apply w-full p-4 bg-transparent 
+               border border-gray-300 dark:border-gray-600 
                rounded text-gray-900 dark:text-white;
     }
 
     .contact-button {
-        @apply px-6 py-3 bg-gray-800 text-white hover:bg-gray-700 
-               dark:bg-gray-200 dark:text-gray-900 dark:hover:bg-gray-300 
+        @apply px-6 py-3 bg-gray-900 text-white 
+               hover:bg-gray-800
+               dark:bg-gray-200 dark:text-gray-900 
+               dark:hover:bg-gray-300 
                transition-colors duration-200;
     }
 
@@ -66,5 +84,10 @@
         right: 0;
         bottom: 0;
         left: 0;
+    }
+
+    /* Icon styles */
+    .fa {
+        @apply text-gray-900 dark:text-white;
     }
 }
