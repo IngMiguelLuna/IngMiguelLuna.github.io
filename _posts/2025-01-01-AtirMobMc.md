@@ -12,6 +12,8 @@ ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
 ---
 
+<img src="https://1drv.ms/i/c/3ff52d86e7907f11/IQSeUbhoby4KQ7xF6FnSSLrNAb7XLQw6rKFxvN9tlri7MEc?width=auto" alt="AtirMob" class="w-full h-auto mt-8">
+
 # Atir: mob para minecraft
 
 Atir es el nombre del mob destinado a meterse en un mod de minecraft, modelado en **BlockBench** una herramienta de modelado 3D como blender con la principal diferencia de tener una estetica cubica pues surgió para ser compatible con Minecraft.
@@ -23,6 +25,8 @@ Mob es el nombre de las criaturas del juego, Atir surgió como el principal mob 
 Esta acondicionado para usarse en mc base sin  necesidad de librerias extra, tiene dos animaciones basicas:
 - Idle: Respiracion tranquila
 - Caminar
+
+<img src="https://1drv.ms/u/c/3ff52d86e7907f11/IQTDT7RzZe8xQqyL8TloZRH2AQkZqsEKfn0lxm-TCOoaRXY?width=auto" alt="AtirMob" class="w-full h-auto mt-8">
 
 Ambas animaciones se pueden combinar o reproducir en simultaneo para un movimiento mas natural.
 

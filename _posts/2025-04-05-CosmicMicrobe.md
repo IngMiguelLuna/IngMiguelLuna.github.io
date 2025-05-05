@@ -13,6 +13,8 @@ github: "https://github.com/IngMiguelLuna"
 patreon: https://patreon.com/IngMiguelLuna?utm_medium=unknown&utm_source=join_link&utm_campaign=creatorshare_creator&utm_content=copyLink
 ---
 
+<img src="https://1drv.ms/i/c/3ff52d86e7907f11/IQQVwR-ymTDWSpKhk0PF30FXAQkArPmP25dZWQOmZLH9Wpk?width=auto" alt="Cosmic Microbe" class="w-full h-auto mt-8">
+
 # Cosmic Microbe: The Battle Against Amoebius
 
 Cosmic Microbe es un videojuego 2D dedicado a dispositivos moviles, desarrollado en **GodotEngine** un entorno de desarrollo en auge especializado en 2d.

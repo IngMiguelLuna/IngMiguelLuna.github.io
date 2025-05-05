@@ -674,12 +674,108 @@ h1:is(.dark *), h2:is(.dark *), h3:is(.dark *), h4:is(.dark *), h5:is(.dark *), 
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
+/* Markdown content styles */
+
+.prose ul {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.prose ul li {
+  position: relative;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+.prose ul li::before {
+  content: "・";
+  position: absolute;
+  left: -1.5rem;
+  color: currentColor;
+}
+
+.prose blockquote {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-left-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(156 163 175 / var(--tw-border-opacity, 1));
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+}
+
+.prose blockquote:is(.dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgb(75 85 99 / var(--tw-border-opacity, 1));
+  background-color: rgb(31 41 55 / 0.5);
+}
+
+/* Estilos de títulos Markdown */
+
+.prose h1 {
+  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+}
+
+.prose h2 {
+  margin-bottom: 1.5rem;
+  margin-top: 1.25rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+
+.prose h3 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+.prose h4 {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.prose h5 {
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.prose h6 {
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+}
+
 .fixed {
   position: fixed;
 }
 
 .bottom-20 {
   bottom: 5rem;
+}
+
+.bottom-5 {
+  bottom: 1.25rem;
 }
 
 .left-0 {

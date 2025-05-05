@@ -12,6 +12,8 @@ ig: "https://www.instagram.com/mikirokorokomiki/"
 github: "https://github.com/IngMiguelLuna"
 ---
 
+<img src="https://1drv.ms/i/c/3ff52d86e7907f11/IQTJjWugGdv4Qpo-2LBsAAsFAfaIEhK-ETu7HlKW4gw91hA?width=auto" alt="DoubleChess" class="w-full h-auto mt-8">
+
 # DoubleChess game 
 
 Es un juego 2D desarrollado en **Python** con la librería Pygame. Python es uno de los lenguajes más populares de la última década, conocido por su versatilidad en áreas como desarrollo web, ciencia de datos, inteligencia artificial y automatización. Aunque es cierto que puede ser limitado en términos de rendimiento para tareas intensivas, esto se puede mitigar utilizando bibliotecas optimizadas como NumPy o integrando código en lenguajes como C o C++. Además, su comunidad activa y su extenso ecosistema de bibliotecas lo convierten en una excelente opción para proyectos de diversa índole.
