@@ -1,0 +1,57 @@
+/* Base styles */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    /* Profile photo effect */
+    #pPhoto {
+        mask-image: linear-gradient(black 80%, transparent);
+        -webkit-mask-image: linear-gradient(black 80%, transparent);
+    }
+
+    /* Layout */
+    .sidebar {
+        width: 120px;
+        background: #222;
+    }
+
+    /* Card styles */
+    .project-card {
+        @apply bg-gray-800 rounded-lg overflow-hidden transform transition-all duration-300;
+    }
+
+    .project-card:hover {
+        @apply scale-105 shadow-xl;
+    }
+
+    /* Form styles */
+    .contact-input {
+        @apply w-full p-4 border bg-transparent text-white border-gray-600 rounded;
+    }
+
+    .contact-button {
+        @apply px-6 py-3 bg-gray-300 text-black hover:bg-black hover:text-gray-300 transition-colors;
+    }
+
+    /* Grid layout */
+    .grid-container {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4;
+    }
+
+    /* Aspect ratio container */
+    .aspect-w-16 {
+        position: relative;
+        padding-bottom: 56.25%;
+    }
+    
+    .aspect-w-16 > * {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}

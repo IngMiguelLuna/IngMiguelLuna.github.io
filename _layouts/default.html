@@ -10,31 +10,31 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
 <body class="bg-black text-white font-['Montserrat']">
 
 <!-- Sidebar - hidden on small screens -->
-<nav class="fixed top-0 left-0 h-full w-32 bg-[#222] hidden sm:block text-center">
+<nav class="sidebar fixed top-0 left-0 h-full hidden sm:block text-center">
   <!-- Avatar -->
   <img src="{{page.imgProfile}}" class="w-full h-[18%] object-cover" alt="profile">
   <a href="#" class="block p-4 bg-black hover:bg-black">
     <i class="fa fa-home text-4xl"></i>
     <p>INICIO</p>
   </a>
-  <a href="#aboutme" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+  <a href="#aboutme" class="block p-4 hover:bg-black transition-colors">
     <i class="fa fa-user text-4xl"></i>
     <p>SOBRE MÍ</p>
   </a>
-  <a href="#proyects" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+  <a href="#proyects" class="block p-4 hover:bg-black transition-colors">
     <i class="fa fa-eye text-4xl"></i>
     <p>PROYECTOS</p>
   </a>
-  <a href="#contact" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+  <a href="#contact" class="block p-4 hover:bg-black transition-colors">
     <i class="fa fa-envelope text-4xl"></i>
     <p>CONTACTO</p>
   </a>
-  <a href="#about" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+  <a href="#about" class="block p-4 hover:bg-black transition-colors">
     <i class="fa fa-info text-4xl"></i>
     <p>ACERCA DE</p>
   </a>
@@ -66,10 +66,17 @@
     <hr class="w-48 opacity-50 mb-8">
     <p class="text-justify">{{page.acercaDe}}</p>
     <h3 class="text-2xl text-white py-4 mt-8">Mis Habilidades</h3>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-8">
       {% for habilidad in site.data.habilidades %}
-        <div class="mb-4">
-          <p class="text-lg">{{ habilidad.nombre }}</p>
+        <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg hover:bg-gray-700 transition-colors">
+          {% if habilidad.type == "custom" %}
+            <img src="{{ '/assets/img/icons/' | append: habilidad.icon | relative_url }}" 
+                 alt="{{ habilidad.nombre }}" 
+                 class="w-12 h-12 mb-3">
+          {% else %}
+            <i class="{{ habilidad.type }} {{ habilidad.icon }} text-4xl mb-3"></i>
+          {% endif %}
+          <p class="text-lg text-center">{{ habilidad.nombre }}</p>
         </div>
       {% endfor %}
     </div>
@@ -81,11 +88,11 @@
     <hr class="w-48 opacity-50 mb-8">
 
     <!-- Grid for large screens -->
-    <div class="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div class="hidden sm:grid grid-container">
       {% for post in site.posts %}
-        <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
+        <div class="project-card">
           <a href="{{ post.url }}" class="block">
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-w-16">
               <img src="{{post.img}}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="p-4">
@@ -100,9 +107,9 @@
     <!-- Grid for small screens -->
     <div class="grid grid-cols-1 gap-4 sm:hidden">
       {% for post in site.posts %}
-        <div class="bg-gray-800 rounded-lg overflow-hidden">
+        <div class="project-card">
           <a href="{{ post.url }}" class="block">
-            <div class="aspect-w-16 aspect-h-9">
+            <div class="aspect-w-16">
               <img src="{{post.img}}" alt="" class="w-full h-full object-cover">
             </div>
             <div class="p-4">
@@ -128,11 +135,11 @@
 
     <p class="mb-4">Envíame un mensaje:</p>
     <form id="contactForm" class="space-y-4">
-      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="text" placeholder="Nombre" required name="Name" autocomplete="name">
-      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="email" placeholder="Email" required name="Email" autocomplete="email">
-      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="text" placeholder="Asunto" required name="Subject">
-      <textarea class="w-full p-4 border bg-transparent text-white border-gray-600 rounded resize-y" placeholder="Mensaje" required name="Message"></textarea>
-      <button class="px-6 py-3 bg-gray-300 text-black hover:bg-black hover:text-gray-300 transition-colors" type="submit">
+      <input class="contact-input" type="text" placeholder="Nombre" required name="Name" autocomplete="name">
+      <input class="contact-input" type="email" placeholder="Email" required name="Email" autocomplete="email">
+      <input class="contact-input" type="text" placeholder="Asunto" required name="Subject">
+      <textarea class="contact-input resize-y" placeholder="Mensaje" required name="Message"></textarea>
+      <button class="contact-button" type="submit">
         <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
       </button>
       <p class="text-sm">{{content}}</p>
@@ -162,7 +169,7 @@
 <!-- Theme Toggle Button -->
 <button onclick="toggleTheme()" class="fixed bottom-5 left-5 p-2 bg-black hover:bg-gray-800 transition-colors">🌙/☀️</button>
 
-<!-- Move script to external file -->
+<!-- Scripts -->
 <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
 </body>
