@@ -7,314 +7,163 @@
     <meta name="description" content="Blog personal de Ing. Miguel Luna, donde comparto mis proyectos y conocimientos.">
     <meta name="keywords" content="blog, ingeniería, tecnología, proyectos, Miguel Luna">
     <meta name="author" content="Miguel Luna">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />-->
-    <style>
-      body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
-      .w3-row-padding img {margin-bottom: 12px}
-      /* Establecer el ancho de la barra lateral a 120px */
-      .w3-sidebar {width: 120px; background: #222;}
-      /* Añadir un margen izquierdo al "contenido de la página" que coincida con el ancho de la barra lateral (120px) */
-      #main {margin-left: 120px}
-      /* Eliminar márgenes del "contenido de la página" en pantallas pequeñas */
-      @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-      #pPhoto {
-        mask-image: linear-gradient(
-          black 80%,
-          transparent
-        );
-      }
-      .w3-card-4 img {
-        width: 100%;
-        height: auto;
-      }
-      .w3-card-4:hover {
-        transform: scale(1.05);
-        box-shadow: 0 4px 8px rgba(59, 175, 218, 0.3);
-        transition: transform 0.3s, box-shadow 0.3s;
-      }
-      .w3-card-4 {
-        perspective: 1000px;
-      }
-      .w3-card-4:hover .w3-container {
-        transform: rotateY(10deg);
-      }
-      form p {
-        margin-bottom: 16px;
-      }
-      form textarea {
-        resize: vertical;
-      }
-      .w3-button.w3-light-grey.w3-hover-black {
-        background-color: #a0a0a0;
-        color: #000;
-        border: none;
-        transition: background-color 0.3s, color 0.3s;
-      }
-      .w3-button.w3-light-grey.w3-hover-black:hover {
-        background-color: #000;
-        color: #a0a0a0;
-      }
-      .grid-container {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        gap: 10px;
-        padding: 10px;
-      }
-      .grid-container > div {
-        color: #000;
-        padding: 10px;
-        font-size: 30px;
-        text-align: center;
-      }
-      descCard {
-        text-decoration: none;
-        font-size: 18px;
-        line-height: 1.6;
-        color: #d3d3d3;
-      }
-    </style>
-    
   </head>
-<body class="w3-black">
+<body class="bg-black text-white font-['Montserrat']">
 
-<!-- Barra de iconos (barra lateral - oculta en pantallas pequeñas) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Imagen de avatar en la esquina superior izquierda -->
-  <img src="{{page.imgProfile}}" style="width:100%" height="18%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
+<!-- Sidebar - hidden on small screens -->
+<nav class="fixed top-0 left-0 h-full w-32 bg-[#222] hidden sm:block text-center">
+  <!-- Avatar -->
+  <img src="{{page.imgProfile}}" class="w-full h-[18%] object-cover" alt="profile">
+  <a href="#" class="block p-4 bg-black hover:bg-black">
+    <i class="fa fa-home text-4xl"></i>
     <p>INICIO</p>
   </a>
-  <a href="#aboutme" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
+  <a href="#aboutme" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+    <i class="fa fa-user text-4xl"></i>
     <p>SOBRE MÍ</p>
   </a>
-  <a href="#proyects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
+  <a href="#proyects" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+    <i class="fa fa-eye text-4xl"></i>
     <p>PROYECTOS</p>
   </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
+  <a href="#contact" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+    <i class="fa fa-envelope text-4xl"></i>
     <p>CONTACTO</p>
   </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-info w3-xxlarge"></i>
+  <a href="#about" class="block p-4 bg-[#222] hover:bg-black transition-colors">
+    <i class="fa fa-info text-4xl"></i>
     <p>ACERCA DE</p>
   </a>
 </nav>
 
-<!-- Barra de navegación en pantallas pequeñas (oculta en pantallas medianas y grandes) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button fa fa-home" style="width:20% !important"></a>
-    <a href="#aboutme" class="w3-bar-item w3-button fa fa-user" style="width:20% !important"></a>
-    <a href="#proyects" class="w3-bar-item w3-button fa fa-eye" style="width:20% !important"></a>
-    <a href="#contact" class="w3-bar-item w3-button fa fa-envelope" style="width:20% !important"></a>
-    <a href="#about" class="w3-bar-item w3-button fa fa-info" style="width: 20% !important"></a>
+<!-- Small screen navigation -->
+<div class="fixed top-0 w-full sm:hidden z-50" id="myNavbar">
+  <div class="flex justify-around bg-black bg-opacity-90 hover:bg-opacity-100 text-sm">
+    <a href="#" class="flex-1 text-center py-4 fa fa-home"></a>
+    <a href="#aboutme" class="flex-1 text-center py-4 fa fa-user"></a>
+    <a href="#proyects" class="flex-1 text-center py-4 fa fa-eye"></a>
+    <a href="#contact" class="flex-1 text-center py-4 fa fa-envelope"></a>
+    <a href="#about" class="flex-1 text-center py-4 fa fa-info"></a>
   </div>
 </div>
 
-<!-- Contenido de la página -->
-<div class="w3-padding-large w3-black" id="main">
-  <!-- Encabezado/Inicio -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">{{page.prefijo}}</span> {{page.nombre}}</h1>
+<!-- Page Content -->
+<div class="sm:ml-32 p-8" id="main">
+  <!-- Header/Home -->
+  <header class="text-center py-8" id="home">
+    <h1 class="text-7xl mb-4"><span class="hidden sm:inline">{{page.prefijo}}</span> {{page.nombre}}</h1>
     <p>{{page.descripcion}}</p>
-    <img id="pPhoto" src="{{page.imgProfile}}" alt="{{page.nombre}}" class="w3-image" width="992" height="1108">
+    <img id="pPhoto" src="{{page.imgProfile}}" alt="{{page.nombre}}" class="max-w-full h-auto mt-8">
   </header>
 
-  <!-- Sección Sobre Mí -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="aboutme">
-    <h2 class="w3-text-light-grey">Sobre Mí</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>{{page.acercaDe}}</p>
-    <h3 class="w3-padding-16 w3-text-light-grey">Mis Habilidades</h3>
-    <div class="w3-row-padding w3-center">
+  <!-- About Section -->
+  <div class="py-16 text-gray-300" id="aboutme">
+    <h2 class="text-3xl text-white mb-4">Sobre Mí</h2>
+    <hr class="w-48 opacity-50 mb-8">
+    <p class="text-justify">{{page.acercaDe}}</p>
+    <h3 class="text-2xl text-white py-4 mt-8">Mis Habilidades</h3>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
       {% for habilidad in site.data.habilidades %}
-        <div class="w3-col m3 w3-margin-bottom">
-          <p class="w3-wide">{{ habilidad.nombre }}</p>
+        <div class="mb-4">
+          <p class="text-lg">{{ habilidad.nombre }}</p>
         </div>
       {% endfor %}
     </div>
-  <!-- Fin de la sección Sobre Mí -->
   </div>
   
-  <!-- Sección de Portafolio -->
-  <div class="w3-padding-64 w3-content" id="proyects">
-    <h2 class="w3-text-light-grey">Mis Proyectos</h2>
-    <hr style="width:200px" class="w3-opacity">
+  <!-- Portfolio Section -->
+  <div class="py-16" id="proyects">
+    <h2 class="text-3xl text-white mb-4">Mis Proyectos</h2>
+    <hr class="w-48 opacity-50 mb-8">
 
-    <!-- Cuadrícula para tarjetas de proyectos pantallas grandes -->
-    <div class="w3-row-padding w3-hide-small" style="margin:0 -16px">
-      <div class="grid-container">
-        {% for post in site.posts %}
-          <div class="w3-card-4 w3-margin w3-dark-grey w3-hover-opacity">
-            <a href="{{ post.url }}">
-              <div class="w3-container" id="mi-imagenes">
-                <img src="{{post.img}}" alt="">
-              </div>
-            <div class="w3-container">
-              <h3>{{ post.titulo }}</h3>
-              <p id="descCard">{{ post.descripcion }}</p>
+    <!-- Grid for large screens -->
+    <div class="hidden sm:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {% for post in site.posts %}
+        <div class="bg-gray-800 rounded-lg overflow-hidden transform hover:scale-105 transition-transform duration-300 hover:shadow-xl">
+          <a href="{{ post.url }}" class="block">
+            <div class="aspect-w-16 aspect-h-9">
+              <img src="{{post.img}}" alt="" class="w-full h-full object-cover">
             </div>
-            </a>
-          </div>
-        {% endfor %}
-      </div>
-    <!-- Fin de la cuadrícula de proyectos -->
-    </div>
-    <!-- Cuadrícula para tarjetas de proyectos pantallas chicas-->
-    <div class="w3-row-padding w3-hide-large w3-hide-medium" style="margin:0 -16px">
-      <div class="w3-row-padding w3-center" id="mi-imagenes">
-        {% for post in site.posts %}
-          <div class="w3-col l3 m6 w3-margin-bottom">
-            <div class="w3-card-4 w3-dark-grey w3-hover-opacity">
-              <a href="{{ post.url }}">
-                <div class="w3-container" id="mi-imagenes">
-                  <img src="{{post.img}}" alt="Atir">
-                </div>
-              <div class="w3-container">
-                <h3>{{ post.titulo }}</h3>
-                <p>{{ post.descripcion }}</p>
-              </div>
-              </a>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">{{ post.titulo }}</h3>
+              <p class="text-gray-300 text-sm">{{ post.descripcion }}</p>
             </div>
-          </div>
-        {% endfor %}
-      </div>
-      <!-- Fin de la cuadrícula de proyectos -->
+          </a>
+        </div>
+      {% endfor %}
     </div>
-  <!-- Fin de la sección de Portafolio -->
+
+    <!-- Grid for small screens -->
+    <div class="grid grid-cols-1 gap-4 sm:hidden">
+      {% for post in site.posts %}
+        <div class="bg-gray-800 rounded-lg overflow-hidden">
+          <a href="{{ post.url }}" class="block">
+            <div class="aspect-w-16 aspect-h-9">
+              <img src="{{post.img}}" alt="" class="w-full h-full object-cover">
+            </div>
+            <div class="p-4">
+              <h3 class="text-xl font-semibold mb-2">{{ post.titulo }}</h3>
+              <p class="text-gray-300 text-sm">{{ post.descripcion }}</p>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
   </div>
 
-  <!-- Sección de Contacto -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contáctame</h2>
-    <hr style="width:200px" class="w3-opacity">
+  <!-- Contact Section -->
+  <div class="py-16 text-gray-300" id="contact">
+    <h2 class="text-3xl text-white mb-4">Contáctame</h2>
+    <hr class="w-48 opacity-50 mb-8">
 
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> {{page.ubi}}</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Teléfono: {{page.tel}}</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Email: {{page.email}}</p>
-    </div><br>
-    <p>Envíame un mensaje:</p>
-    <form id="contactForm">
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Nombre" required name="Name" autocomplete="name"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="email" placeholder="Email" required name="Email" autocomplete="email"></p>
-      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Asunto" required name="Subject"></p>
-      <p><textarea class="w3-input w3-padding-16 w3-border" placeholder="Mensaje" required name="Message"></textarea></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large w3-hover-black" type="submit">
-          <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
-        </button>
-      </p>
-      <p style="font-size: small;">
-         {{content}}
-      </p>
-      
+    <div class="space-y-4 mb-8">
+      <p><i class="fa fa-map-marker fa-fw text-white text-4xl mr-4"></i> {{page.ubi}}</p>
+      <p><i class="fa fa-phone fa-fw text-white text-4xl mr-4"></i> Teléfono: {{page.tel}}</p>
+      <p><i class="fa fa-envelope fa-fw text-white text-4xl mr-4"></i> Email: {{page.email}}</p>
+    </div>
+
+    <p class="mb-4">Envíame un mensaje:</p>
+    <form id="contactForm" class="space-y-4">
+      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="text" placeholder="Nombre" required name="Name" autocomplete="name">
+      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="email" placeholder="Email" required name="Email" autocomplete="email">
+      <input class="w-full p-4 border bg-transparent text-white border-gray-600 rounded" type="text" placeholder="Asunto" required name="Subject">
+      <textarea class="w-full p-4 border bg-transparent text-white border-gray-600 rounded resize-y" placeholder="Mensaje" required name="Message"></textarea>
+      <button class="px-6 py-3 bg-gray-300 text-black hover:bg-black hover:text-gray-300 transition-colors" type="submit">
+        <i class="fa fa-paper-plane"></i> ENVIAR MENSAJE
+      </button>
+      <p class="text-sm">{{content}}</p>
     </form>
-  <!-- Fin de la sección de Contacto -->
   </div>
 
-  <!--Acerca de-->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="about">
-    <h2 class="w3-text-light-grey">Acerca de</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>{{page.aboutme}}</p>
+  <!-- About Section -->
+  <div class="py-16 text-gray-300" id="about">
+    <h2 class="text-3xl text-white mb-4">Acerca de</h2>
+    <hr class="w-48 opacity-50 mb-8">
+    <p class="mb-4">{{page.aboutme}}</p>
     <p>{{page.aboutme2}}</p>
   </div>
 
-  <!-- Pie de página -->
-  <footer class="w3-center w3-padding-16 w3-black">
-    <p>{{page.infoFooter}}</p>
-    <div>
-      <a href="{{page.x}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-twitter"></i></a>
-      <a href="{{page.ig}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-instagram"></i></a>
-      <a href="{{page.github}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-github"></i></a>
-      <a href="{{page.patreon}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-patreon"></i></a>
+  <!-- Footer -->
+  <footer class="text-center py-4">
+    <p class="mb-4">{{page.infoFooter}}</p>
+    <div class="space-x-4">
+      <a href="{{page.x}}" class="inline-block p-2 hover:bg-gray-800 transition-colors"><i class="fa fa-twitter"></i></a>
+      <a href="{{page.ig}}" class="inline-block p-2 hover:bg-gray-800 transition-colors"><i class="fa fa-instagram"></i></a>
+      <a href="{{page.github}}" class="inline-block p-2 hover:bg-gray-800 transition-colors"><i class="fa fa-github"></i></a>
+      <a href="{{page.patreon}}" class="inline-block p-2 hover:bg-gray-800 transition-colors"><i class="fa fa-patreon"></i></a>
     </div>
   </footer>
-<!-- FIN DEL CONTENIDO DE LA PÁGINA -->
 </div>
 
-<!-- Dark/Light Mode Toggle -->
-<button onclick="toggleTheme()" class="w3-button w3-black w3-hover-grey" style="position: fixed; bottom: 20px; left: 20px;">🌙/☀️</button>
+<!-- Theme Toggle Button -->
+<button onclick="toggleTheme()" class="fixed bottom-5 left-5 p-2 bg-black hover:bg-gray-800 transition-colors">🌙/☀️</button>
 
-<script>
-    // Modo Oscuro/Claro
-    function toggleTheme() {
-      const body = document.body;
-      if (!body) return; // Verificar que el body existe
-
-      body.classList.toggle("w3-black");
-      body.classList.toggle("w3-white");
-
-      const elements = document.querySelectorAll(".w3-dark-grey, .w3-text-grey, .w3-asphalt, .fa");
-      elements.forEach(el => {
-        if (body.classList.contains("w3-white")) {
-          if (el.classList.contains("w3-dark-grey")) {
-            el.classList.remove("w3-dark-grey");
-            el.classList.add("w3-light-grey");
-          }
-          if (el.classList.contains("w3-text-grey")) {
-            el.classList.remove("w3-text-grey");
-            el.classList.add("w3-text-black");
-          }
-          if (el.classList.contains("w3-asphalt")) {
-            el.style.backgroundColor = "#d3d3d3"; // Light grey
-          }
-          if (el.classList.contains("fa")) {
-            el.style.color = "#000"; // Black for icons
-          }
-        } else {
-          if (el.classList.contains("w3-light-grey")) {
-            el.classList.remove("w3-light-grey");
-            el.classList.add("w3-dark-grey");
-          }
-          if (el.classList.contains("w3-text-black")) {
-            el.classList.remove("w3-text-black");
-            el.classList.add("w3-text-grey");
-          }
-          if (el.classList.contains("w3-asphalt")) {
-            el.style.backgroundColor = "#2f4f4f"; // Dark slate grey
-          }
-          if (el.classList.contains("fa")) {
-            el.style.color = "#fff"; // White for icons
-          }
-        }
-      });
-    }
-
-    document.getElementById('contactForm').addEventListener('submit', async function(event) {
-      event.preventDefault(); // Evitar el envío del formulario
-
-      const formData = new FormData(event.target);
-      const data = Object.fromEntries(formData.entries());
-
-      try {
-        const response = await fetch('https://formspree.io/f/mldjzpng', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-          alert('Gracias por tu mensaje, ' + data.Name + '! Nos pondremos en contacto contigo pronto.');
-          event.target.reset(); // Reiniciar el formulario
-        } else {
-          alert('Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.');
-        }
-      } catch (error) {
-        console.error('Error al enviar el formulario:', error);
-        alert('Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.');
-      }
-    });
-  </script>
+<!-- Move script to external file -->
+<script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 
 </body>
 </html>
