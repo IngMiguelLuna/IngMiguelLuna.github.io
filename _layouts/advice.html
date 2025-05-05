@@ -1,154 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>{{page.titulo}}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-    body, h1, h2, h3, h4, h5, h6 {
-      font-family: "Montserrat", sans-serif;
-    }
-    .w3-sidebar {
-      width: 120px;
-      background: #222;
-    }
-    #main {margin-left: 120px;
-    }
-    @media only screen and (max-width: 600px) {
-      #main {
-        margin-left: 0;
-      }
-    }
-    
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-    }
-    .iframe-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-      height: 0;
-      overflow: hidden;
-    }
-
-    .iframe-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    @media (max-width: 768px) {
-      .iframe-container {
-        padding-bottom: 30%; /* Adjust aspect ratio for smaller screens */
-      }
-    }
-  </style>
+    <title>{{page.titulo}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="w3-black">
-  <!-- Sidebar menu -->
-  <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-arrow-left w3-xxlarge"></i>
-      <p>REGRESAR</p>
-    </a>
-  </nav>
+<body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
 
-  <!-- Top navigation bar for mobile -->
-  <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-      <a href="/" class="w3-bar-item w3-button" style="width:100% !important">REGRESAR</a>
+    <!-- Button To Top -->
+    <button onclick="topFunction()" id="myBtn" class="fixed hidden bottom-20 right-5 p-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-white rounded">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold mb-8 text-gray-900 dark:text-white">{{page.titulo}}</h1>
+        {{content}}
     </div>
-  </div>
 
-  <!-- Main content -->
-  <div class="w3-padding-large" id="main">
-    <div class="w3-asphalt" style="padding: 20px; border-radius: 10px;">
-      <h1>{{page.titulo}}</h1>
-      <p>{{content}}</p>
-    </div>
-  </div>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
 
-  <!-- Footer -->
-  <footer class="w3-center w3-padding-16 w3-black">
-    <p>© 2025 Ing. Miguel Luna. Todos los derechos reservados.</p>
-    <div>
-      <a href="{{page.x}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-twitter"></i></a>
-      <a href="{{page.ig}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-instagram"></i></a>
-      <a href="{{page.github}}" class="w3-button w3-black w3-hover-grey"><i class="fa fa-github"></i></a>
-    </div>
-  </footer>
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
 
-  <!-- Back to Top Button -->
-  <button onclick="topFunction()" id="backToTop" class="w3-button w3-black w3-hover-grey" style="position: fixed; bottom: 20px; right: 20px; display: none;">↑</button>
-
-  <script>
-    // Mostrar el botón al hacer scroll
-    window.onscroll = function() {
-      const button = document.getElementById("backToTop");
-      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        button.style.display = "block";
-      } else {
-        button.style.display = "none";
-      }
-    };
-
-    // Función para volver arriba
-    function topFunction() {
-      document.body.scrollTop = 0;
-      document.documentElement.scrollTop = 0;
-    }
-
-    // Modo Oscuro/Claro
-    function toggleTheme() {
-      const body = document.body;
-      if (!body) return; // Verificar que el body existe
-
-      body.classList.toggle("w3-black");
-      body.classList.toggle("w3-white");
-
-      const elements = document.querySelectorAll(".w3-dark-grey, .w3-text-grey, .w3-asphalt, .fa");
-      elements.forEach(el => {
-        if (body.classList.contains("w3-white")) {
-          if (el.classList.contains("w3-dark-grey")) {
-            el.classList.remove("w3-dark-grey");
-            el.classList.add("w3-light-grey");
-          }
-          if (el.classList.contains("w3-text-grey")) {
-            el.classList.remove("w3-text-grey");
-            el.classList.add("w3-text-black");
-          }
-          if (el.classList.contains("w3-asphalt")) {
-            el.style.backgroundColor = "#d3d3d3"; // Light grey
-          }
-          if (el.classList.contains("fa")) {
-            el.style.color = "#000"; // Black for icons
-          }
-        } else {
-          if (el.classList.contains("w3-light-grey")) {
-            el.classList.remove("w3-light-grey");
-            el.classList.add("w3-dark-grey");
-          }
-          if (el.classList.contains("w3-text-black")) {
-            el.classList.remove("w3-text-black");
-            el.classList.add("w3-text-grey");
-          }
-          if (el.classList.contains("w3-asphalt")) {
-            el.style.backgroundColor = "#2f4f4f"; // Dark slate grey
-          }
-          if (el.classList.contains("fa")) {
-            el.style.color = "#fff"; // White for icons
-          }
+        function scrollFunction() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
         }
-      });
-    }
-  </script>
 
-  <!-- Dark/Light Mode Toggle -->
-  <button onclick="toggleTheme()" class="w3-button w3-black w3-hover-grey" style="position: fixed; bottom: 20px; left: 20px;">🌙/☀️</button>
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+
+    <!-- Theme Toggle Button -->
+    <button onclick="toggleTheme()" class="fixed bottom-5 left-5 p-2 bg-gray-200 dark:bg-gray-800 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-gray-900 dark:text-white rounded">🌙/☀️</button>
+
+    <!-- Scripts -->
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>
