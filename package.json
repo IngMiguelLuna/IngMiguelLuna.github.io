@@ -1,0 +1,27 @@
+{
+  "name": "ingmiguelluna.github.io",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./_assets/css/main.scss -o ./_site/assets/main.css --watch",
+    "build": "tailwindcss -i ./_assets/css/main.scss -o ./_site/assets/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IngMiguelLuna/IngMiguelLuna.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IngMiguelLuna/IngMiguelLuna.github.io/issues"
+  },
+  "homepage": "https://github.com/IngMiguelLuna/IngMiguelLuna.github.io#readme",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.3.3",
+    "postcss": "^8.4.31",
+    "autoprefixer": "^10.4.15"
+  }
+}
